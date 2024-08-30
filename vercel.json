@@ -4,13 +4,13 @@
     "Json-Server/api/server.js": {
       "memory": 1024,
       "maxDuration": 10,
-      "includeFiles": "Json-Server/db.json"
+      "includeFiles": "db.json"
     }
   },
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/Json-Server/api/server.js"
+      "dest": "/api/server.js"
     }
   ]
 }
