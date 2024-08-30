@@ -1,15 +1,16 @@
 {
   "version": 2,
+  "functions": {
+    "Json-Server/api/server.js": {
+      "memory": 1024,
+      "maxDuration": 10,
+      "includeFiles": "Json-Server/db.json"
+    }
+  },
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/json-server/server.js"
+      "dest": "/Json-Server/api/server.js"
     }
-  ],
-  "functions": {
-    "Json-Server/server.js": {
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  }
+  ]
 }
