@@ -4,7 +4,8 @@ const cors = require("cors");
 
 const app = jsonServer.create();
 
-const router = jsonServer.router("db.json");
+const dbPath = path.join(__dirname, "db.json");
+const router = jsonServer.router(dbPath);
 const middlewares = jsonServer.defaults();
 
 // Omogući CORS
@@ -16,7 +17,7 @@ app.use(
   })
 );
 
-app.use("/api", router);
+app.use(router);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
