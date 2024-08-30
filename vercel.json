@@ -1,5 +1,21 @@
 {
   "version": 2,
-  "builds": [{ "src": "Json-Server/server.js", "use": "@vercel/node" }],
-  "routes": [{ "src": "/api/(.*)", "dest": "/Json-Server/server.js" }]
+  "builds": [
+    {
+      "src": "Json-Server/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/json-server/server.js"
+    }
+  ],
+  "functions": {
+    "Json-Server/server.js": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  }
 }
