@@ -8,8 +8,6 @@ const dbPath = path.join(__dirname, "db.json");
 const router = jsonServer.router(dbPath);
 const middlewares = jsonServer.defaults();
 
-// Omogući CORS
-const cors = require("cors");
 app.use(
   cors({
     origin: "*", // Or specify your front-end URL
