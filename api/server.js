@@ -5,13 +5,13 @@ const fs = require("fs");
 
 const app = jsonServer.create();
 
-// const db = JSON.parse(fs.readFileSync(path.join(__dirname, "db.json")));
-const router = jsonServer.router("db.json");
+const dbPath = path.join(__dirname, "db.json");
+const router = jsonServer.router(dbPath);
 const middlewares = jsonServer.defaults();
 
 app.use(
   cors({
-    origin: "https://first-react-code.vercel.app/*", // Or specify your front-end URL
+    origin: "https://first-react-code.vercel.app/*",
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
