@@ -1,16 +1,17 @@
 const jsonServer = require("json-server");
 const path = require("path");
 const cors = require("cors");
+const fs = require("fs");
 
 const app = jsonServer.create();
 
-const dbPath = path.join(__dirname, "db.json");
-const router = jsonServer.router(dbPath);
+// const db = JSON.parse(fs.readFileSync(path.join(__dirname, "db.json")));
+const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 
 app.use(
   cors({
-    origin: "*", // Or specify your front-end URL
+    origin: "https://first-react-code.vercel.app/*", // Or specify your front-end URL
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
