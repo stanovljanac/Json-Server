@@ -11,8 +11,9 @@ const middlewares = jsonServer.defaults();
 
 app.use(
   cors({
-    origin: "https://first-react-code.vercel.app/*",
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
