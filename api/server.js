@@ -9,7 +9,14 @@ const router = jsonServer.router(dbPath);
 const middlewares = jsonServer.defaults();
 
 // Omogući CORS
-app.use(cors());
+const cors = require("cors");
+app.use(
+  cors({
+    origin: "*", // Or specify your front-end URL
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
+);
+
 app.use(middlewares);
 app.use(
   jsonServer.rewriter({
