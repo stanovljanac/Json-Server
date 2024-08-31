@@ -5,8 +5,8 @@ const fs = require("fs");
 
 const app = jsonServer.create();
 
-const dbPath = path.join(__dirname, "db.json");
-const router = jsonServer.router(dbPath);
+const db = JSON.parse(fs.readFileSync(path.join(__dirname, "db.json")));
+const router = jsonServer.router(db);
 const middlewares = jsonServer.defaults();
 
 app.use(
